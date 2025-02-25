@@ -9,42 +9,52 @@
 </head>
 <body>
     <header>
-        <div class="header-container">
-            <h1>LIS500 Project 2</h1>
+        <div class="nav-container">
             <nav>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Me</a></li>
+                    <li><a href="index.html"class="active">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
                     <li><a href="resources.html">Implicit Bias Resources</a></li>
                     <li><a href="techhero.html">Tech Hero</a></li>
                 </ul>
             </nav>
         </div>
+        <br>
+        <h1>LIS500 Project 2</h1>
     </header>
-    <main>
-        <section class="hero">
-            <h2>Welcome to our website!</h2>
-            <p>Explore to learn more about us, resources, and insights on technology and social equity.</p>
-            <img src="images/welcome.jpg" alt="Image placeholder" class="responsive">
-            <br>
-            <br>
-            <audio controls>
-                <source src="audio/welcome_message.mp3" type="audio/mpeg">
-            </audio>
-        </section>
-        <section class="interactive-map">
-            <h2>Explore More</h2>
-            <p>Click on different areas of the image below to navigate the site.</p>
-            <img src="images/map.jpg" alt="Interactive Site Map Placeholder" usemap="#site-map">
-            <map name="site-map">
-                <area shape="rect" coords="34,44,270,350" href="about.html" alt="About Me">
-                <area shape="rect" coords="290,172,333,250" href="resources.html" alt="Resources">
-                <area shape="rect" coords="337,300,400,400" href="techhero.html" alt="Tech Hero">
-            </map>
-        </section>
-    </main>
-    <footer>
+    <br>
+    <br>
+	<!-- Creating first section for the home page -->
+    <section class="hero">
+		<!-- Creating header for the section -->
+        <h2>Exploring Technology, Intersectionality, and Equity</h2>
+		<!-- Adding Image for the section-->
+        <img src="images/uwmadison_campus.jpg" alt="UW Madison Campus">
+		<!-- Paragraph to give information about the course and project-->
+        <p> Welcome to our website! This website is our project for LIS 500: Code and Power at UW-Madison, 
+            a course that explores technology, power, identity, human interaction with tech, inclusivity, and intersectionality.
+            Through this project wbesite, we hope to introduce some key topics and useful resources of this course on specifically intersectionality in the tech industry.
+            We also introduce two tech heroes, individuals whose work has made significant efforts towards equity and challenging norms
+            in this this space.
+            <br> All images on this website are creative commons licensed or are credited.</p>
+		<!-- Button to switch to about us page -->
+        <a href="about.html" class="btn">Learn More About Us</a>
+    </section>
+
+	<!-- Creating second section for our welcome page -->
+    <section class="image-map">
+		<!-- Header for the section -->
+        <h2>Explore Our Website</h2>
+        <p>Click on the leftmost/red person to see our page on implicit bias and intersectionality!
+            <br>Click on the rightmost/purple person to see our page on tech heroes!</p>
+		<!-- Interactive image to click on Resources page or Tech Heroes page -->
+        <img src="images/DEI.jpeg" usemap="#topics-map">
+        <map name="topics-map">
+            <area shape="rect" coords="20,200,120,470" alt="Implicit Bias" href="resources.html">
+            <area shape="rect" coords="480,200,600,470" alt="Tech Hero" href="techhero.html">
+        </map>
+    </section>
+	</body>
+   <footer>
         <p>&copy; 2025 LIS500 P2 Justina Rhee, Isha Puri</p>
-    </footer>
-</body>
-</html>
+   </footer>   

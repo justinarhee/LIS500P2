@@ -1,60 +1,101 @@
-<!-- Tech Hero Page -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tech Hero</title>
+    <title>Tech Heroes</title>
     <link rel="stylesheet" href="stylepage.css">
 </head>
 <body>
     <header>
-        <h1>Tech Hero</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Me</a></li>
-                <li><a href="resources.html">Implicit Bias Resources</a></li>
-            </ul>
-        </nav>
+        <div class="nav-container">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="resources.html">Implicit Bias Resources</a></li>
+                    <li><a href="techhero.html" class="active">Tech Hero</a></li>
+                </ul>
+            </nav>
+        </div>
+        <br>
+        <h1>Tech Heroes</h1>
     </header>
-    <main>
-        <section>
-            <h2>Kimberly Bryant</h2>
-            <h3> Early Life</h3>
-			<ul>
-				<li>Born on January 14, 1967 in Memphis, Tennessee</li>
-				<li>Excelled at math and science, earned a scholarship to Vanderbuilt University</li>
-				<li>Majored in Electrical engineering and minored in Computer Science and Math</li>
-			</ul>
-			<h3>Black Girls Code</h3>
-			<ul>
-				<li>Founded Black Girls Code in 2011 to introduce young girls to STEM Fields </li>
-				<li>The organization focuses on Computer Science, Robotics, AI, and Technology</li>
-				<li>Aims to increase diversity in the tech industry</li>
-				<li>Has reached thousands of girls across the United States</li>
-			</ul>
-			<h3>Awards and Recogintion</h3>
-			<ul>
-				<li>Was named one of the top 25 most influential African Americans in Tech</li>
-				<li>Recognized by the White House as a champion of change</li>
-				<li>Featured on Forbes, CNN, and The New York Times for her work in tech</li>
-			</ul>
-            <!-- Inclusive image with accessibility features -->
-            <img src="images/kimberly_bryant.jpg" alt="Kimberly Bryant speaking at a tech event" class="responsive">
-            <!-- Interactive Podcast Embed -->
-            <iframe src="https://open.spotify.com/embed-podcast/episode/example" width="100%" height="232" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-        </section>
-        <section>
-            <h2>Learn More</h2>
-            <ul>
-                <li><a href="https://blackgirlscode.com/">Black Girls Code</a></li>
-                <li><a href="https://www.wocintechchat.com/">Women of Color in Tech</a></li>
-            </ul>
-        </section>
-    </main>
+    <br>
+    <br>
+
+    <section class="hero">
+        <h2>Tech Leaders Making a Difference</h2>
+        <p>Meet two leaders shaping the future of technology. Learn how they’re making AI and STEM more inclusive.</p>
+    </section>
+
+    <!-- Tech Heroes Side by Side with Full-Width Cards -->
+    <section class="techhero-container">
+        <!-- Kimberly Bryant -->
+        <div class="techhero-card">
+			<!-- Image of Kimberly Bryant-->
+            <img src="images/kimberly_bryant.jpg" alt="Kimberly Bryant">
+            <div class="techhero-info">
+				<!-- Kimberly Bryant's Header -->
+                <h3>Kimberly Bryant</h3>
+				<!-- Blurb about Bryant -->
+                <p>Founder of <strong>Black Girls Code</strong>, empowering young Black girls in STEM.</p>
+				<!-- Early life header and information-->
+                <h4>Early Life</h4>
+                <p>Kimberly Bryant was born in 1967 in Memphis, Tennessee. She was always intersted in technology and engineering which ended up leading her to pursue a Bachelor's degree in Electrical Engineering at Vanderbilt University. At Vanderbilt one of the the things she noticed was there was a lack of diversity and females in STEM, which was one of her inspirations to create change.</p>
+				<!-- Information about Career and Impact -->
+                <h4>Career & Impact</h4>
+                <p>After graduating, Bryant worked in the pharmaceutical industry, specializing in electrical engineering and systems management. She held positions at Genentech and Pfizer, two leading companies in this field. In 2011, she founded <strong> Black Girls Code </strong>, a nonprofit organization dedicated to increasing the opportunities for young black girls in STEM fields, mainly in Technology and computer science. There are hands-on coding workshops, hackathons, and mentorship programs to equip the next generation with STEM skills. Under Bryant's leadership, <strong> Black Girls Code </strong> expanded to several cities, allowing more young girls to be interested in software development and other technology-related jobs.</p>
+				<!-- Information about Awards and Recognition -->
+                <h4>Awards & Recognition</h4>
+                <p>Kimberly Bryant's contributions have led her to have widespread recognition. She has been featured on lists such as <i>Business Insider's Most Influential African Americans in Technology </i>. She has received awards from <i>Forbes, The Root 100, </i> and <i> Smithsonian Magazine</i> for her leadership and impact. She has also been honored by the White House as a Champion of Change. She continues to advocate for racial and gender equity in STEM.
+				</p>
+    			<!-- Links with more information about Kimberly Bryant-->
+				<a href="https://www.wearebgc.org/" target="_blank" class="btn">Visit Black Girls Code</a>
+				<a href="https://www.nae.edu/305187/An-Interview-with-Kimberly-Bryant-founder-and-CEO-the-Black-Innovation-Lab-and-founder-Black-Girls-Code" target="_blank" class="btn">More About Kimberly Bryant</a>
+				<a href="https://www.engineering.cornell.edu/news/black-girls-code-founder-inspires-future-leaders" target="_blank" class="btn">Kimberly Bryant's Awards</a>
+            </div>
+        </div>
+
+        <!-- Timnit Gebru -->
+        <div class="techhero-card">
+			<!-- Timnit Gebru's image-->
+            <img src="images/timnit_gebru.jpg" alt="Timnit Gebru">
+            <div class="techhero-info">
+				<!-- Gebru's name and small blurb -->
+                <h3>Timnit Gebru</h3>
+                <p>AI Ethics Researcher advocating for fairness in AI.</p>
+				<!-- Information about Gebru's early life -->
+                <h4>Early Life</h4>
+                <p>Timnit Gebru was born in Ethiopia and immigrated to the United States. She pursued her passion for technology by studying Electrical Engineering at Stanford University. She earned her PhD in computer vision under the mentorship of an AI researcher, Fei-Fei Li, where she focused on computer vision and the ethical implications of artificial intelligence.</p>
+				<!-- Information about Gebru's career and impact -->
+                <h4>Career & Impact</h4>
+                <p>Gebru has been a leading voice in AI ethics, advocating for fairness, accountability, and transparency in AI systems. She was one of the co-leaders of Google's ethical AI team, where she researched racial and gender biases in machine learning models. In 2020, she co-authored a paper analyzing the risks of large-scale AI models, including lack of transparency and their tendency to encode harmful biases. Because this paper was so controversial, she left Google, which furthered the conversation about corporate control over AI research and ethical concerns in the tech industry. After she left Google, Gebru founded the <i> Distributed Artificial Intelligence Research Institute (DAIR)</i>, which is an independent AI research organization that promotes ethical AI development in technological advancements.</p>
+               <!-- Information about Gebru's awards and recognition -->
+				<h4>Awards & Recognition</h4>
+                <p>Gebru's contributions to AI ethics have earned her global recognition. She has been featured on <i> Time's 100 Most Influential People in AI, Forbes Top Women in AI </i> and <i> MIT Technology Review's Innovators Under 35. </i> She continues challenging biased AI practices and hopes to have a future where AI serves humans equitably.</p>
+				<!-- Links with more information about Gebru -->
+                <a href="https://www.dair-institute.org/" target="_blank" class="btn">Dair Institute</a>
+				<a href="https://ai.stanford.edu/~tgebru/" target="_blank" class="btn">More About Timnit Gebru</a>
+				<a href="https://www.technologyreview.com/2020/12/04/1013294/google-ai-ethics-research-paper-forced-out-timnit-gebru/" target="_blank" class="btn">Timnit Gebru at Google</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video & Additional Resources -->
+    <section class="resources-section">
+        <h2>Discover Their Impact</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/TJ-m47CxAI0" frameborder="0" allowfullscreen></iframe>
+        <p>Black Girls Code | Kimberly Bryant | TEDxKC</p>
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/PWCtoVt1CJM" frameborder="0" allowfullscreen></iframe>
+        <p>How To Stop Artificial Intelligence From Marginalizing Communities? | Timnit Gebru | TEDxCollegePark</p>
+    </section>
+
+	
+	
     <footer>
         <p>&copy; 2025 Isha Puri and Justina Rhee</p>
     </footer>
+
 </body>
 </html>
