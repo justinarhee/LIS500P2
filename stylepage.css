@@ -1,0 +1,470 @@
+/* General Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Header with Fixed Navigation */
+header {
+    background: linear-gradient(135deg, #ff7eb3, #ff758c);
+    color: white;
+    text-align: center;
+    padding: 20px 0 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 22px;
+    position: relative;
+}
+
+/* Navigation Bar */
+.nav-container {
+    display: flex;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    padding: 10px 15px;
+    transition: background 0.3s ease, color 0.3s ease;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffccd5;
+}
+
+nav ul li a.active {
+    background: white;
+    color: #ff758c;
+    border-radius: 5px;
+}
+
+/* Title Below Navigation */
+header h1 {
+    font-size: 30px;
+    margin-top: 15px;
+}
+/* Hero Section */
+.hero {
+    padding: 50px;
+    max-width: 900px;
+    margin: auto;
+    background: white;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    margin-bottom: 30px;
+    text-align: left;  /* Ensures text aligns properly */
+}
+
+/* Center h2 but Keep p Left-Aligned */
+.hero h2 {
+    text-align: center;
+    margin-bottom: 20px;  /* Adds spacing between title and image */
+}
+
+/* Fix Image Overflow & Add Rounded Corners */
+.hero img {
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+    display: block;
+    margin: auto;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 25px; /* Adds spacing between the image and the text */
+}
+
+/* Adjust Paragraph Alignment & Spacing */
+.hero p {
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto 25px auto; /* Keeps text aligned and adds spacing */
+    padding: 0 20px; /* Aligns paragraph to match button and image width */
+    line-height: 1.7; /* Improves readability */
+}
+
+/* Button Alignment Fix */
+.hero .btn {
+    display: block;
+    width: fit-content;
+    margin: 0 auto; /* Centers button to align with text */
+}
+
+/* INDEX PAGE: Image Map */
+.image-map {
+    text-align: center;
+    padding: 50px 20px;
+    max-width: 900px;
+    margin: auto;
+    background: white;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+/* Adjust Paragraph Alignment & Spacing */
+.image-map p {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 25px auto; /* Keeps text aligned and adds spacing */
+    padding: 0 20px; /* Aligns paragraph to match button and image width */
+    line-height: 1.7; /* Improves readability */
+}
+
+/* Add a Black Border Around the Image Map Image */
+.image-map img {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 8px;
+    border: 2px solid black; /* Adds a thin black border */
+    transition: transform 0.3s ease;
+}
+
+/* ABOUT PAGE: Bio Cards */
+.concepts {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.concept-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    width: 45%;
+    min-width: 300px;
+    text-align: center;
+}
+
+.concept-card img {
+    width: 400px;  /* Adjust width for a more rectangular look */
+    height: 500px; /* Slightly taller than width */
+    border-radius: 12px;  /* Rounded edges, but not a circle */
+    object-fit: cover;  /* Ensures the image fills the space without distortion */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.concept-card h3 {
+    color: #ff758c;
+}
+
+/* Interactive Cards Section */
+.interactive-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;  /* Allows wrapping on smaller screens */
+    gap: 30px;
+    padding: 40px 20px;
+    max-width: 1200px;  /* Allows more space for wider cards */
+    margin: auto;
+}
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 60%;  /* Wider cards */
+    min-width: 400px;
+    max-width: 900px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;  /* Keeps text structure */
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, background 0.3s ease;
+    text-decoration: none;  /* Removes underline from link */
+    color: inherit;  /* Keeps default text color */
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    background: #ff758c;
+    color: white;
+}
+
+.card p {
+    text-align: left;
+}
+
+/* Video & External Resources */
+.resources-section {
+    text-align: center;
+    padding: 40px 20px;  /* Slightly reduced padding */
+    max-width: 900px;
+    margin: auto;
+    background: white;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    margin-bottom: 40px; /* Reduced bottom margin */
+}
+
+/* YouTube Video Embeds */
+.resources-section iframe {
+    display: block;
+    margin: 30px auto;  /* Reduced from 40px to 30px */
+    width: 100%;
+    max-width: 560px;
+    height: 315px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* External Resource Links */
+.external-link {
+    margin: 30px 0; /* Reduced from 40px to 30px */
+}
+
+/* Buttons for External Links */
+.resource-links .btn, 
+.external-link .btn {
+    display: inline-block;
+    background: #ff758c;
+    color: white;
+    padding: 12px 18px; /* Slightly smaller buttons */
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.3s ease;
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+    margin: 15px auto; /* Reduced from 20px to 15px */
+}
+
+.resource-links .btn:hover, 
+.external-link .btn:hover {
+    background: #e64e69;
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background: #222;
+    color: white;
+    padding: 25px 0;
+    margin-top: 50px;
+    font-size: 14px;
+}
+
+/* TECH HERO PAGE: Expanding Profile Cards */
+.techhero-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 40px;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: auto;
+    flex-wrap: wrap;
+}
+
+/* Wider Profile Cards */
+.techhero-card {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    width: 90%;  /* Each card now stretches to 90% of the screen */
+    max-width: 1200px; /* Prevents cards from becoming too wide */
+    height: auto;
+}
+
+/* Profile Image Styling */
+.techhero-card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Tech Hero Info */
+.techhero-info {
+    text-align: left;
+    flex: 1;
+}
+
+/* Header and Text Formatting */
+.techhero-info h3 {
+    color: #ff758c;
+    margin-bottom: 10px;
+    font-size: 26px;
+}
+
+.techhero-info h4 {
+    color: #333;
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.techhero-info p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    background: #ff758c;
+    color: white;
+    padding: 14px 22px;
+    margin-top: 15px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+    background: #e64e69;
+    transform: scale(1.05);
+}
+
+
+/* Teachable project details */
+.teachable-detail-card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+    margin-bottom: 30px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    line-height: 1.8;
+}
+
+.teachable-detail-card h3 {
+    color: #ff758c;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.teachable-detail-card p,
+.teachable-detail-card ul,
+.teachable-detail-card ol {
+    max-width: 850px;
+    margin: 0 auto 20px auto;
+    padding: 0 10px;
+    font-size: 16px;
+    color: #444;
+}
+
+.teachable-detail-card ul,
+.teachable-detail-card ol {
+    padding-left: 40px;
+}
+
+.teachable-detail-card li {
+    margin-bottom: 10px;
+}
+
+.teachable-detail-card em {
+    color: #ff758c;
+    font-style: normal;
+    font-weight: bold;
+}
+
+/* --- Teachable Machine Page Specific Fixes --- */
+.teachable-container {
+    padding: 20px;
+    max-width: 950px;
+    margin: 0 auto 0 auto; /* bottom margin set to 0 */
+}
+
+.teachable-container .card {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+    margin-bottom: 40px;
+    text-align: left;
+    width: 100%;
+}
+
+.teachable-container .card h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+}
+
+.teachable-container .card p,
+.teachable-container .card ol,
+.teachable-container .card ul {
+    font-size: 16px;
+    color: #444;
+    line-height: 1.7;
+    max-width: 850px;
+    margin: 0 auto 20px;
+}
+
+.teachable-container .card iframe {
+    display: block;
+    margin: 30px auto;
+    width: 100%;
+    max-width: 560px;
+    height: 315px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.teachable-container .resource-links {
+    text-align: center;
+}
+
+.teachable-container .btn {
+    background: #ff758c;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+    margin: 10px;
+}
+
+.teachable-container .btn:hover {
+    background: #e64e69;
+    transform: scale(1.05);
+}
+
+/* Spacing below header only for teachable pages */
+header.teachable-header {
+    margin-bottom: 30px;
+}
