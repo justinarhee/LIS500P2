@@ -464,7 +464,6 @@ footer {
     transform: scale(1.05);
 }
 
-/* Spacing below header only for teachable pages */
 header.teachable-header {
     margin-bottom: 30px;
 }
