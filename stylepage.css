@@ -352,3 +352,119 @@ footer {
     background: #e64e69;
     transform: scale(1.05);
 }
+
+
+/* Teachable project details */
+.teachable-detail-card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+    margin-bottom: 30px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    line-height: 1.8;
+}
+
+.teachable-detail-card h3 {
+    color: #ff758c;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.teachable-detail-card p,
+.teachable-detail-card ul,
+.teachable-detail-card ol {
+    max-width: 850px;
+    margin: 0 auto 20px auto;
+    padding: 0 10px;
+    font-size: 16px;
+    color: #444;
+}
+
+.teachable-detail-card ul,
+.teachable-detail-card ol {
+    padding-left: 40px;
+}
+
+.teachable-detail-card li {
+    margin-bottom: 10px;
+}
+
+.teachable-detail-card em {
+    color: #ff758c;
+    font-style: normal;
+    font-weight: bold;
+}
+
+/* --- Teachable Machine Page Specific Fixes --- */
+.teachable-container {
+    padding: 20px;
+    max-width: 950px;
+    margin: 0 auto 0 auto; /* bottom margin set to 0 */
+}
+
+.teachable-container .card {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+    margin-bottom: 40px;
+    text-align: left;
+    width: 100%;
+}
+
+.teachable-container .card h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+}
+
+.teachable-container .card p,
+.teachable-container .card ol,
+.teachable-container .card ul {
+    font-size: 16px;
+    color: #444;
+    line-height: 1.7;
+    max-width: 850px;
+    margin: 0 auto 20px;
+}
+
+.teachable-container .card iframe {
+    display: block;
+    margin: 30px auto;
+    width: 100%;
+    max-width: 560px;
+    height: 315px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.teachable-container .resource-links {
+    text-align: center;
+}
+
+.teachable-container .btn {
+    background: #ff758c;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+    margin: 10px;
+}
+
+.teachable-container .btn:hover {
+    background: #e64e69;
+    transform: scale(1.05);
+}
+
+/* Spacing below header only for teachable pages */
+header.teachable-header {
+    margin-bottom: 30px;
+}
