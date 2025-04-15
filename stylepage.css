@@ -468,3 +468,10 @@ footer {
 header.teachable-header {
     margin-bottom: 30px;
 }
+.resources-section img {
+    width: 800px;  /* Adjust width for a more rectangular look */
+    height: 500px; /* Slightly taller than width */
+    border-radius: 12px;  /* Rounded edges, but not a circle */
+    object-fit: cover;  /* Ensures the image fills the space without distortion */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
