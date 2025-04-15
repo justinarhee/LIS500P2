@@ -44,9 +44,6 @@
 			<script type="text/javascript">
 			  // Classifier Variable
 			  let classifier;
-			  // Model URL
-			  let imageModelURL = 'teachable-models/';
-
 
 			  // Video
 			  let video;
@@ -56,7 +53,7 @@
 
 			  // Load the model first
 			  function preload() {
-				classifier = ml5.imageClassifier(imageModelURL + 'model.json');
+				classifier = ml5.imageClassifier('model.json');
 			  }
 
 			  function setup() {
