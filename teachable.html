@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teachable Machine Project</title>
     <link rel="stylesheet" href="stylepage.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.2/p5.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.2/addons/p5.sound.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/ml5@0.12.2/dist/ml5.min.js"></script>
 </head>
 <body>
     <header class="teachable-header">
@@ -22,12 +25,14 @@
         <br>
         <h1>Teachable Machine: Algorithm & Reflection</h1>
     </header>
+	
 
-    <div class="teachable-container">
+
+	<div class="teachable-container">
         <section class="hero">
             <h2>Machine Learning Meets Intersectionality</h2>
             <p>This project explores the process of training a basic classification model using 
-                <a href="https://teachablemachine.withgoogle.com/" target="_blank">Teachable Machine</a>. 
+                <a href="https://teachablemachine.withgoogle.com/models/zASNSv_Ae/" target="_blank">Teachable Machine</a>. 
                 We experimented with a simple facial emotion classifier and reflected on the ethical 
                 implications using insights from Joy Buolamwini’s <em>Unmasking AI</em>.
             </p>
@@ -35,12 +40,82 @@
 
         <section class="resources-section">
             <h2>Watch My Model in Action</h2>
-            <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" title="Teachable Machine Demo" allowfullscreen></iframe>
+			<div id="model-canvas"></div> 
+			<script type="text/javascript">
+			  // Classifier Variable
+			  let classifier;
+			  // Model URL
+			  let imageModelURL = 'teachable-models/';
+
+
+			  // Video
+			  let video;
+			  let flippedVideo;
+			  // To store the classification
+			  let label = "";
+
+			  // Load the model first
+			  function preload() {
+				classifier = ml5.imageClassifier(imageModelURL + 'model.json');
+			  }
+
+			  function setup() {
+				let canvas = createCanvas(320, 260);
+				canvas.parent("model-canvas");	
+				// Create the video
+				video = createCapture(VIDEO);
+				video.size(320, 240);
+				video.hide();
+
+				flippedVideo = ml5.flipImage(video);
+				// Start classifying
+				classifyVideo();
+			  }
+
+			  function draw() {
+				background(0);
+				// Draw the video
+				image(flippedVideo, 0, 0);
+
+				// Draw the label
+				fill(255);
+				textSize(16);
+				textAlign(CENTER);
+				text(label, width / 2, height - 4);
+			  }
+
+			  // Get a prediction for the current video frame
+			  function classifyVideo() {
+				flippedVideo = ml5.flipImage(video)
+				classifier.classify(flippedVideo, gotResult);
+				flippedVideo.remove();
+
+			  }
+
+			  // When we get a result
+			  function gotResult(error, results) {
+				// If there is an error
+				if (error) {
+				  console.error(error);
+				  return;
+				}
+				// The results are in an array ordered by confidence.
+				// console.log(results[0]);
+				label = results[0].label;
+				// Classifiy again!
+				classifyVideo();
+			  }
+			</script>
+
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/mygSoguuQ8A" title="Teachable Machine Demo" frameborder="0" allowfullscreen></iframe>
+
         </section>
+		
 
         <section class="resources-section">
             <h2>Attached Materials</h2>
             <div class="resource-links">
+				<img src="model.jpg" alt="teachable machine">
                 <a href="model_files.zip" class="btn" download>Download Model Files</a>
                 <a href="teachable_project_details.html" class="btn">Project Experiment Details</a>
             </div>
