@@ -1,11 +1,11 @@
-// Teachable Machine - Facial Expression Model
-// Isha Puri
+// Teachable Machine - Smiling or Serious Model
+// Isha Puri and Justina Rhee
 
 let video;
 let label = "waiting...";
 let classifier;
 
-// STEP 1: Load the model!
+// STEP 1: Load the model
 function preload() {
   classifier = ml5.imageClassifier('teachable-models/model.json');
 }
@@ -18,14 +18,15 @@ function setup() {
   video.size(400, 400);
   video.hide();
 
-  classifyVideo(); // STEP 2: Start classifying!
+  // STEP 2: Classify
+  classifyVideo(); 
 }
 
 function draw() {
   background(0);
   image(video, 0, 0);
 
-  // STEP 4: Draw the label
+  // STEP 3: Draw the label
   textSize(32);
   textAlign(CENTER, CENTER);
   fill(255);
@@ -44,7 +45,7 @@ function draw() {
   text(emoji, width / 2, height / 2);
 }
 
-// STEP 3: Get classification
+// STEP 4: Get classification
 function classifyVideo() {
   classifier.classify(video, gotResults);
 }
