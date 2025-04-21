@@ -26,20 +26,6 @@ function draw() {
   background(0);
   image(video, 0, 0);
 
-  // STEP 3: Get classification
-function classifyVideo() {
-  classifier.classify(video, gotResults);
-}
-
-function gotResults(error, results) {
-  if (error) {
-    console.error(error);
-    return;
-  }
-  label = results[0].label;
-  classifyVideo();
-}
-  
   // STEP 4: Draw the label
   textSize(32);
   textAlign(CENTER, CENTER);
@@ -58,5 +44,20 @@ function gotResults(error, results) {
   textSize(128);
   text(emoji, width / 2, height / 2);
 }
+
+  // STEP 3: Get classification
+function classifyVideo() {
+  classifier.classify(video, gotResults);
+}
+
+function gotResults(error, results) {
+  if (error) {
+    console.error(error);
+    return;
+  }
+  label = results[0].label;
+  classifyVideo();
+}
+  
 
 
