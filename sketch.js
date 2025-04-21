@@ -5,11 +5,12 @@ let video;
 let label = "waiting";
 let classifier;
 
-// STEP 1: Load the model!
+// STEP 1: Load the model
 function preload() {
   classifier = ml5.imageClassifier('teachable-models/model.json');
 }
 
+//STEP2: Setup the model
 function setup() {
   createCanvas(400, 400);
   select('canvas').parent('model-canvas');
@@ -18,13 +19,27 @@ function setup() {
   video.size(400, 400);
   video.hide();
 
-  classifyVideo(); // STEP 2: Start classifying!
+  classifyVideo(); // STEP 2: Start classifying
 }
 
 function draw() {
   background(0);
   image(video, 0, 0);
 
+  // STEP 3: Get classification
+function classifyVideo() {
+  classifier.classify(video, gotResults);
+}
+
+function gotResults(error, results) {
+  if (error) {
+    console.error(error);
+    return;
+  }
+  label = results[0].label;
+  classifyVideo();
+}
+  
   // STEP 4: Draw the label
   textSize(32);
   textAlign(CENTER, CENTER);
@@ -44,16 +59,4 @@ function draw() {
   text(emoji, width / 2, height / 2);
 }
 
-// STEP 3: Get classification
-function classifyVideo() {
-  classifier.classify(video, gotResults);
-}
 
-function gotResults(error, results) {
-  if (error) {
-    console.error(error);
-    return;
-  }
-  label = results[0].label;
-  classifyVideo();
-}
