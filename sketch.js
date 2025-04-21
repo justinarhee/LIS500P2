@@ -1,16 +1,15 @@
 // Teachable Machine - Facial Expression Model
-// Isha Puri and Justina Rhee
+// Isha Puri
 
 let video;
-let label = "waiting";
+let label = "waiting...";
 let classifier;
 
-// STEP 1: Load the model
+// STEP 1: Load the model!
 function preload() {
   classifier = ml5.imageClassifier('teachable-models/model.json');
 }
 
-//STEP2: Setup the model
 function setup() {
   createCanvas(400, 400);
   select('canvas').parent('model-canvas');
@@ -19,7 +18,7 @@ function setup() {
   video.size(400, 400);
   video.hide();
 
-  classifyVideo(); // STEP 2: Start classifying
+  classifyVideo(); // STEP 2: Start classifying!
 }
 
 function draw() {
@@ -45,7 +44,7 @@ function draw() {
   text(emoji, width / 2, height / 2);
 }
 
-  // STEP 3: Get classification
+// STEP 3: Get classification
 function classifyVideo() {
   classifier.classify(video, gotResults);
 }
@@ -58,6 +57,3 @@ function gotResults(error, results) {
   label = results[0].label;
   classifyVideo();
 }
-  
-
-
