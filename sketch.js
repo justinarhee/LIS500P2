@@ -2,7 +2,7 @@
 // Isha Puri and Justina Rhee
 
 let video;
-let label = "waiting...";
+let label = "waiting";
 let classifier;
 
 // STEP 1: Load the model!
@@ -11,11 +11,11 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(640, 520);
+  createCanvas(400, 400);
   select('canvas').parent('model-canvas');
 
   video = createCapture(VIDEO);
-  video.size(640, 480);
+  video.size(400, 400);
   video.hide();
 
   classifyVideo(); // STEP 2: Start classifying!
