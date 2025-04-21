@@ -42,8 +42,8 @@
             <h2>Steps Followed</h2>
             <ol>
                 <li>Collected webcam-based facial expression data using Teachable Machine.</li>
-                <li>Labeled data into categories: Happy, Sad, Mad, and Serious.</li>
-                <li>Ensured balanced data (around 40 samples per label).</li>
+                <li>Labeled data into categories: Smiling and Serious.</li>
+                <li>Ensured balanced data (around 30-50 samples per label).</li>
                 <li>Trained the model using default hyperparameters.</li>
                 <li>Tested across different lighting and distances (near vs far).</li>
                 <li>Adjusted background lighting and retrained for improved stability.</li>
@@ -53,17 +53,16 @@
 
         <div class="card">
             <h2>Model Performance</h2>
-            <p>The model performs fairly well in recognizing different facial expressions—especially when exaggerated or clearly defined (e.g., a wide smile or furrowed brows). However, subtle expressions such as a small smile or a serious face with slightly raised eyebrows tend to confuse the classifier. It often flips rapidly between two labels, like "Happy" and "Serious," if the expression falls between boundaries.</p>
-            <p>Model performance is also highly dependent on physical distance from the camera. If the subject is too far or too close, expression detection becomes less accurate. Optimal recognition happens at medium distance with a centered face and even lighting.</p>
-            <p>While the system is not perfect, it generally assigns the user to the right label most of the time, which is sufficient for a lightweight project. The classifier is usable on mobile browsers but still prefers frontal, evenly lit faces for reliability.</p>
+            <p>The model performs fairly well in recognizing different facial expressions—especially when exaggerated or clearly defined (e.g., a wide smile or furrowed brows). However, subtle expressions such as a small smile or a serious face with slightly raised eyebrows tend to confuse the classifier. It often flips rapidly between two labels, like "Smiling" and "Serious," if the expression falls between boundaries.</p>
+            <p>Model performance is also highly dependent on physical distance from the camera. If the subject is too far or too close, expression detection becomes less accurate as it tends to flicker between the options. Optimal recognition happens at medium distance with a centered face and even lighting.</p>
+            <p>While the system is not perfect, it mostly assigns the user to the right label most of the time, with it occasionally flickering between both options. The classifier is usable on mobile browsers but still prefers frontal, evenly lit faces for reliability.</p>
         </div>
 
         <div class="card">
             <h2>Challenges Faced</h2>
             <ul>
-                <li>Subtle expressions are hard to distinguish, especially between small smiles and serious faces.</li>
-                <li>Distance to camera affected accuracy—close or far positions led to inconsistent predictions.</li>
-                <li>Lighting variations (even natural daylight vs room light) shifted model confidence.</li>
+                <li>Subtle expressions are hard to distinguish.</li>
+                <li>Distance to camera occasionally affects how fast the model provides the right expression.</li>
                 <li>Model often flipped between similar-looking expressions, highlighting over-sensitivity to small features.</li>
                 <li>Teachable Machine offers little transparency into its model architecture, making fine-tuning difficult.</li>
             </ul>
