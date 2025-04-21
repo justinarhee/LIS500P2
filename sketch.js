@@ -27,7 +27,7 @@ function draw() {
   image(video, 0, 0);
 
   // STEP 3: Draw the label
-  textSize(32);
+  textSize(20);
   textAlign(CENTER, CENTER);
   fill(255);
   text(label, width / 2, height - 28);
