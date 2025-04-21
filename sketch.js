@@ -1,96 +1,59 @@
-// Classifier Variable
-let classifier;
-// Model URL
-let imageModelURL = 'teachable-models/';
+// Teachable Machine - Facial Expression Model
+// Isha Puri and Justina Rhee
 
-// Video
 let video;
-let flippedVideo;
-// To store the classification
-let label = "";
+let label = "waiting...";
+let classifier;
 
-// Load the model first
+// STEP 1: Load the model!
 function preload() {
-  classifier = ml5.imageClassifier(imageModelURL + 'model.json');
+  classifier = ml5.imageClassifier('teachable-models/model.json');
 }
 
 function setup() {
-  let canvas = createCanvas(320, 260);
-  canvas.parent("model-canvas");
+  createCanvas(640, 520);
+  select('canvas').parent('model-canvas');
 
   video = createCapture(VIDEO);
-  video.size(320, 240);
+  video.size(640, 480);
   video.hide();
 
-  flippedVideo = ml5.flipImage(video);
-  classifyVideo();
+  classifyVideo(); // STEP 2: Start classifying!
 }
 
 function draw() {
   background(0);
-  image(flippedVideo, 0, 0);
+  image(video, 0, 0);
+
+  // STEP 4: Draw the label
+  textSize(32);
+  textAlign(CENTER, CENTER);
   fill(255);
-  textSize(16);
-  textAlign(CENTER);
-  text(label, width / 2, height - 4);
+  text(label, width / 2, height - 28);
+
+  // Emoji for each label
+  let emoji = "🤖";
+  if (label === "Smiling") {
+    emoji = "😄";
+  } else if (label === "Serious") {
+    emoji = "😐";
+  }
+
+  // Show emoji
+  textSize(128);
+  text(emoji, width / 2, height / 2);
 }
 
+// STEP 3: Get classification
 function classifyVideo() {
-  flippedVideo = ml5.flipImage(video);
-  classifier.classify(flippedVideo, gotResult);
-  flippedVideo.remove();
+  classifier.classify(video, gotResults);
 }
 
-function gotResult(error, results) {
+function gotResults(error, results) {
   if (error) {
     console.error(error);
     return;
   }
   label = results[0].label;
   classifyVideo();
-}
-let classifier;
-let imageModelURL = 'teachable-models/';
-
-let video;
-let label = "";
-
-function preload() {
-  classifier = ml5.imageClassifier(imageModelURL + 'model.json');
-}
-
-function setup() {
-  let canvas = createCanvas(320, 260);
-  canvas.parent("model-canvas");
-
-  video = createCapture(VIDEO, () => {
-    console.log("🎥 Video capture ready");
-    classifyVideo(); // Start classification only when video is ready
-  });
-
-  video.size(320, 240);
-  video.hide(); // hide default video element
-}
-
-function draw() {
-  background(0);
-  image(video, 0, 0); // draw live video to canvas
-
-  fill(255);
-  textSize(16);
-  textAlign(CENTER);
-  text(label, width / 2, height - 4);
-}
-
-function classifyVideo() {
-  classifier.classify(video, gotResult);
-}
-
-function gotResult(error, results) {
-  if (error) {
-    console.error("❌ Classification error:", error);
-    return;
-  }
-  label = results[0].label;
-  classifyVideo(); // Keep classifying
 }
