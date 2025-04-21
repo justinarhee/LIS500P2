@@ -44,8 +44,9 @@
 			<script type="text/javascript">
 			  // Classifier Variable
 			  let classifier;
-
+			  // Model URL
 			  let imageModelURL = 'teachable-models/';
+
 
 			  // Video
 			  let video;
@@ -55,7 +56,7 @@
 
 			  // Load the model first
 			  function preload() {
-				classifier = ml5.imageClassifier('model.json');
+				classifier = ml5.imageClassifier(imageModelURL + 'model.json');
 			  }
 
 			  function setup() {
@@ -107,13 +108,14 @@
 			</script>
 
             <iframe width="560" height="315" src="https://www.youtube.com/embed/mygSoguuQ8A" title="Teachable Machine Demo" frameborder="0" allowfullscreen></iframe>
+
         </section>
-	
+		
 
         <section class="resources-section">
             <h2>Attached Materials</h2>
             <div class="resource-links">
-		<img src="model.jpg" alt="teachable machine">
+				<img src="images/model.jpg" alt="teachable machine">
                 <a href="model_files.zip" class="btn" download>Download Model Files</a>
                 <a href="teachable_project_details.html" class="btn">Project Experiment Details</a>
             </div>
@@ -125,3 +127,4 @@
     </footer>
 </body>
 </html>
+
