@@ -1,64 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Metadata and page setup -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Teachable Machine Project</title>
+  <!-- Link to external CSS for styling -->
   <link rel="stylesheet" href="stylepage.css">
 </head>
 <body>
+  <!-- Page Header -->
   <header class="teachable-header">
+    <!-- Navigation Bar -->
     <div class="nav-container">
-      <nav>
+      <nav aria-label="Main navigation">
         <ul>
+          <!-- Navigation links to different sections of the website -->
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About Us</a></li>
           <li><a href="resources.html">Implicit Bias Resources</a></li>
           <li><a href="techhero.html">Tech Hero</a></li>
-          <li><a href="teachable.html" class="active">Teachable Machine</a></li>
+          <li><a href="teachable.html">Teachable Machine</a>
+            <!-- Dropdown submenu for teachable machine page -->
+            <ul>
+              <li><a href="teachable_project_details.html">Project Statement & Reflection</a></li>
+            </ul>
+          </li>
         </ul>
       </nav>
     </div>
-    <br>
+    <!-- Main header title -->
     <h1>Teachable Machine: Algorithm & Reflection</h1>
   </header>
 
-  <div class="teachable-container">
+  <!-- Main content area -->
+  <main class="teachable-container">
+    <!-- Section: Introduction -->
     <section class="hero">
-      <h2>Machine Learning Meets Intersectionality</h2>
-      <p>This project explores the process of training a basic classification model using 
-        <a href="https://teachablemachine.withgoogle.com/models/zASNSv_Ae/" target="_blank">Teachable Machine</a>. 
-        We experimented with a simple facial emotion classifier and reflected on the ethical 
-        implications using insights from Joy Buolamwini’s <em>Unmasking AI</em>.
+      <h2>Introduction</h2>
+      <p>
+        With our class readings and the topics of intersectionality, technology, bias, ethics, and human interaction, this project explored the intersection of machine learning, facial recognition, and ethical reflection. Using Google’s Teachable Machine, we trained a model to classify facial expressions as either serious or smiling and built an accessible web interface to showcase its real-time prediction capabilities. Through this project, we hope to take a deep dive into the critical issues Joy Buolamwini raises in her book Unmasking AI—issues surrounding algorithmic bias, representation, data quality, and transparency. Our project, though small in scope, mirrored many of the ethical concerns present in high-stakes AI applications. This website shares our process, the challenges we faced, the lessons learned, and our personal takeaways from building and reflecting on this system.
       </p>
     </section>
 
+    <!-- Section: Model Demo -->
     <section class="resources-section">
       <h2>Watch My Model in Action</h2>
+      <p>Below is our model to test yourself. To see how the model works as intended, watch the demo video below.</p>
+      <!-- Placeholder for model interaction via JavaScript -->
       <div id="model-canvas"></div>
-
+      <!-- Embedded YouTube video demonstration -->
       <iframe width="560" height="315" src="https://www.youtube.com/embed/YKsQ17s3XNk"
-      title="Embedded YouTube Video" frameborder="0" allowfullscreen></iframe>
-
+              title="Model Demo Video" frameborder="0" allowfullscreen></iframe>
     </section>
 
+    <!-- Section: Resources and Downloads -->
     <section class="resources-section">
       <h2>Attached Materials</h2>
       <div class="resource-links">
+        <!-- Image of the model interface -->
         <img src="Teachable-model.jpeg" alt="Teachable Machine Model">
+        <br>
+        <!-- Downloadable zipped model files -->
         <a href="model_files.zip" class="btn" download>Download Model Files</a>
-        <a href="teachable_project_details.html" class="btn">Project Experiment Details</a>
+        <!-- Link to full written reflection and project write-up -->
+        <a href="teachable_project_details.html" class="btn">Project Statement & Reflection</a>
       </div>
     </section>
-  </div>
+  </main>
 
+  <!-- Footer with credits -->
   <footer>
     <p>&copy; 2025 LIS500 P2 Justina Rhee, Isha Puri</p>
   </footer>
 
-  <!-- ✅ JS libraries and your custom script -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.2/p5.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/ml5@0.12.2/dist/ml5.min.js"></script>
-<script src="sketch.js"></script>
+  <!-- Scripts for interactive webcam model using ml5.js and p5.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.2/p5.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/ml5@0.12.2/dist/ml5.min.js"></script>
+  <!-- Local script to handle model behavior -->
+  <script src="sketch.js"></script>
 </body>
 </html>
