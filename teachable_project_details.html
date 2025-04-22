@@ -1,101 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teachable Machine - Project Details</title>
-    <link rel="stylesheet" href="stylepage.css">
-    <style>
-        .teachable-container .card:hover {
-            transform: none;
-            background: white;
-            color: inherit;
-        }
-    </style>
-</head>    
+  <meta charset="UTF-8"> <!-- Sets character encoding for the document -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ensures responsive scaling on mobile devices -->
+  <title>Teachable Project Details</title> <!-- Sets the title shown in the browser tab -->
+  <link rel="stylesheet" href="stylepage.css"> <!-- Links to the external CSS file for styling -->
+
+  <!-- JavaScript to make cards expandable/collapsible when clicked -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const cards = document.querySelectorAll('.card');
+      cards.forEach(card => {
+        card.addEventListener('click', () => {
+          card.classList.toggle('open'); // Toggle the 'open' class to show/hide card content
+        });
+      });
+    });
+  </script>
+</head>
+
 <body>
-    <header>
-        <div class="nav-container">
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="resources.html">Implicit Bias Resources</a></li>
-                    <li><a href="techhero.html">Tech Hero</a></li>
-                    <li><a href="teachable.html" class="active">Teachable Machine</a></li>
-                </ul>
-            </nav>
-        </div>
-        <br>
-        <h1 class="teachable-container-header">Project Experiment Details</h1>
-    </header>
-
-    <div class="teachable-container">
-        <div class="card">
-            <h2>Model Summary</h2>
-            <p><strong>Model Type:</strong> Image Classification<br>
-            <strong>Labels:</strong> Smiling and Serious<br>
-            <strong>Training Samples:</strong> 30 - 50 per label</p>
-        </div>
-
-        <div class="card">
-            <h2>Steps Followed</h2>
-            <ol>
-                <li>Collected webcam-based facial expression data using Teachable Machine.</li>
-                <li>Labeled data into categories: Smiling and Serious.</li>
-                <li>Ensured balanced data (around 30-50 samples per label).</li>
-                <li>Trained the model using default hyperparameters.</li>
-                <li>Tested across different lighting and distances (near vs far).</li>
-                <li>Adjusted background lighting and retrained for improved stability.</li>
-                <li>Exported model in TensorFlow.js format and embedded into webpage.</li>
-            </ol>
-        </div>
-
-        <div class="card">
-            <h2>Model Performance</h2>
-            <p>The model performs fairly well in recognizing different facial expressions—especially when exaggerated or clearly defined (e.g., a wide smile or furrowed brows). However, subtle expressions such as a small smile or a serious face with slightly raised eyebrows tend to confuse the classifier. It often flips rapidly between two labels, like "Smiling" and "Serious," if the expression falls between boundaries.</p>
-            <p>Model performance is also highly dependent on physical distance from the camera. If the subject is too far or too close, expression detection becomes less accurate as it tends to flicker between the options. Optimal recognition happens at medium distance with a centered face and even lighting.</p>
-            <p>While the system is not perfect, it mostly assigns the user to the right label most of the time, with it occasionally flickering between both options. The classifier is usable on mobile browsers but still prefers frontal, evenly lit faces for reliability.</p>
-        </div>
-
-        <div class="card">
-            <h2>Challenges Faced</h2>
-            <ul>
-                <li>Subtle expressions are hard to distinguish.</li>
-                <li>Distance to camera occasionally affects how fast the model provides the right expression.</li>
-                <li>Model often flipped between similar-looking expressions, highlighting over-sensitivity to small features.</li>
-                <li>Teachable Machine offers little transparency into its model architecture, making fine-tuning difficult.</li>
+  <!-- Page Header with Navigation Menu -->
+  <header>
+    <div class="nav-container">
+      <nav aria-label="Main navigation"> <!-- Accessibility label for screen readers -->
+        <ul>
+          <!-- Navigation links -->
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="resources.html">Implicit Bias Resources</a></li>
+          <li><a href="techhero.html">Tech Hero</a></li>
+          <li><a href="teachable.html">Teachable Machine</a>
+            <ul> <!-- Dropdown menu for subpages -->
+              <li><a href="teachable_project_details.html">Project Statement & Reflection</a></li>
             </ul>
-        </div>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <br>
+    <h1 class="teachable-container-header">Project Statement & Reflection </h1> <!-- Main page heading -->
+  </header>
 
-        <div class="card">
-            <h2>Reflections on Unmasking AI</h2>
-            <p>Building this project using Teachable Machine was both a hands-on introduction to machine learning and a deeper reflection on the broader social implications of AI. While technically straightforward, the activity revealed hidden assumptions in how facial recognition models work—and how easily bias, error, and exclusion can emerge from even small-scale experiments.</p>
-            <p>Inspired by Joy Buolamwini’s <em>Unmasking AI</em>, I began to see how something as simple as categorizing expressions can carry underlying ethical stakes. I initially thought of this as a fun, low-stakes project, but soon realized that even playful classifiers are not neutral. Every decision—from which faces I included in training, to what emotions I decided were label-worthy, to how I interpreted accuracy—was a reflection of my values and limitations.</p>
-            <p>For instance, my model struggled with subtle expressions—flipping between "happy" and "serious" when the smile was small or ambiguous. This may seem minor, but as Buolamwini notes, when systems misclassify people, the impact is felt most by those already marginalized. The classifier worked well for my face, but less so for friends with darker skin tones or facial piercings. The same biases that Buolamwini experienced—like not being detected at all without a white mask—appeared at a smaller scale here, revealing the coded gaze embedded in my dataset.</p>
-            <p>One especially resonant lesson from <em>Unmasking AI</em> was the critique of "techno-solutionism"—the idea that more data or better algorithms can fix systemic bias. I found myself tempted to just “collect more data” or “adjust lighting,” but these tweaks didn’t fully solve deeper issues. My model still struggled to understand faces that didn’t look like mine, and still misread emotions that didn’t conform to exaggerated Western expression norms. The answer wasn’t always technical. Sometimes the right move was to ask better questions.</p>
-            <p>Who gets to define what a "neutral" face looks like? What counts as "sad" or "mad" across different cultures or neurotypes? These are not just UX choices or dataset problems—they are ethical dilemmas. And Teachable Machine, while accessible, doesn’t prompt creators to consider them. The tool makes ML easy, but that ease hides the hard questions we must ask about fairness, representation, and harm.</p>
-            <p>Buolamwini’s insistence on transparency and accountability struck a chord with me. Teachable Machine doesn’t reveal its model internals, making it hard to know why a misclassification happens. This opacity reinforces the illusion that ML systems are smart or objective, when in fact they’re brittle and trained on narrow assumptions. When my classifier labeled a serious face as mad, or failed to respond to subtle smiles, it wasn’t just a glitch—it was a product of my choices.</p>
-            <p>Throughout this project, I’ve become more aware that machine learning isn’t just about patterns—it’s about power. Algorithms assign meaning. They decide who gets labeled and how. Even with a toy classifier, I’m shaping how users are seen. And if this technology were used in classrooms or workplaces, those misclassifications could carry real consequences—from disciplinary actions to social stigma.</p>
-            <p>Buolamwini’s call to center the most vulnerable—from Black women to trans users to neurodiverse individuals—has influenced how I think about design. In the future, I plan to invite more people to contribute data, especially those whose expressions differ from my own. I want to visualize uncertainty rather than pretending the classifier is always right. I want users to know when the model is unsure, so they can interpret it cautiously. And I want to document everything—what data I used, what limitations I encountered, what populations were underrepresented.</p>
-            <p>Ultimately, this project taught me that accuracy is not enough. An accurate system can still be unjust if it doesn’t work equally for everyone. A performant model can still cause harm if it's used carelessly. What matters is how we design, whom we include, and whether we take responsibility for what our algorithms do. Like Buolamwini, I believe the right to be seen, to be heard, to be counted must guide our technical decisions. This was just a start, but it showed me what’s at stake—and why ethical design must be built in from the beginning.</p>
-        </div>
+  <!-- Main Container for Card-Based Sections -->
+  <div class="teachable-container">
+    <p class="click-instruction">Click on a card to reveal more information. Click again to hide it.</p> <!-- User instruction -->
 
-        <div class="card">
-            <h2>Ethical Considerations</h2>
-            <p>While this classifier was built for learning, it reflects how quickly real-world assumptions get embedded in code. The algorithm often misclassified subtle emotions, and failed more often with people whose appearance didn’t match the training set. This may seem trivial in a classroom setting, but when scaled into surveillance tools, hiring software, or educational analytics, these biases can become dangerous.</p>
-            <p>Transparency must be core to any model deployment. Any ML system—no matter how small—should disclose what data it was trained on, its intended uses, and its known flaws. This prevents users from over-trusting systems and encourages critical engagement. Our classifier is not ready for real-world deployment, but even as an educational tool, it carries a responsibility to acknowledge its limits and the harm it might cause.</p>
-        </div>
-
-        <div class="card">
-            <h2>Conclusion</h2>
-            <p>This project gave me technical confidence and ethical clarity. I learned how facial expression classifiers are built, but also how biased they can become. Inspired by Buolamwini, I now see ML not just as a tool, but as a reflection of the world we live in—who it privileges, who it ignores, and what values it encodes.</p>
-            <p>Moving forward, I’ll continue asking harder questions, designing for equity, and striving for transparency in every system I help create. Unmasking AI didn’t just inform this project—it transformed how I understand what it means to be a responsible technologist.</p>
-        </div>
+    <!-- Card 1: Project Statement Section -->
+    <div class="card">
+      <h2 role="button" tabindex="0">Project Statement</h2> <!-- Accessible interactive heading -->
+      <div class="card-content"> <!-- Hidden content that expands when card is clicked -->
+        <p>We initially started the project just as a technical assignment: use Teachable Machine to train a facial expression classification model. Our dataset consisted of smiling and serious expressions, collected via webcam. We trained our classifier with roughly 70 samples per label and embedded the exported TensorFlow.js model into a simple webpage using HTML, CSS, and JavaScript.</p>
+        <p>Throughout developing our model, we went through many struggles to get an accurate, deployable model. Despite our dataset size, or perhaps because of it, we struggled to build a model that could accurately identify facial expressions regardless of factors such as lighting inconsistencies, differences in distances from the camera, slight variations in expressions, angles of footages, resolutions, and more. This was an area we wanted to improve on if we had more time with the project. Due to our limited dataset size and the limitation in variety, these factors added to the inaccuracy of our model. However, while these factors did negatively affect our model, it funded our understanding of the class’ topics as it was a real-world manifestation of the issues Buolamwini writes about: the flaws of AI and its lack of neutrality across different communities. The struggles in building an accurate model helped us resonate with Buolamwini in the importance of the quality of data used to train AI. The project helped confirm how to truly build a model that reflects accurately and neutrally across different identities, it requires an immense dataset that also reflects across a variety of factors and identities. Similarly to how training on pictures of white men failed to train AI to recognize Buolamwini’s face unless wearing a white mask, our model struggled to categorize expressions that varied with what we provided in our dataset which is what caused these inaccuracies.</p>
+        <p>While working on our project, Buolamwini’s insistence that "we must audit the authority of AI" deeply resonated with us. We saw firsthand how our model’s performance changed depending on who was in front of the camera and how they were portrayed on the camera lens. Even within the group (Isha and Justina), we saw how using mainly Isha’s face in the training set affected inaccuracies when testing on Justina. And as the project group members, the result of the model truly represents what kind of data we put in. This represents the power imbalance Buolamwini mentioned where the data and people who work on the model exerts power over the results of the model, silencing the voices of marginalized identities. As Ruha Benjamin notes in “White Supremacy and AI”, discriminatory design isn’t always about malicious intent—it’s about neglect and structural inequality. Our dataset unintentionally reproduced this issue. Because we primarily trained on our own faces under specific conditions, the model failed to generalize despite our intentions. Therefore, our project highlighted just how important it was for the people behind the model to take responsibility, honesty, and reflection to critique their model in being a positive tool for all and not just those in power.</p>
+        <p>Moreover, the transparency of our system was something to be improved on. Teachable Machine simplifies ML model development but offers little visibility into model internals. As Buolamwini highlights, opacity in AI development distances users from understanding the system’s flaws. While we included a demo,downloadable files, and explanations to best express our intent, it wasn’t always clear to users how to interpret the results, how the model was trained, or what its limitations were. This opacity reflects Booten’s argument that technology and language are both rhetorical. People assume hashtags or ML outputs “speak for themselves,” when in fact they are socially constructed tools designed to persuade, include, or exclude.</p>
+        <p>This connects with Ellen Pao’s critique of the tech industry in “Tech, Heal Thyself.” She warns against an overreliance on homogenous development teams and urges companies to address systemic biases from within. Our project confirms this. As we reflected on our model and drafted our project statement, it helped us be honest with the flaws within our model and also ways we could improve. Williams and Kessler’s research on pair programming supports this, showing that two (or more) minds together not only debug faster but also generate more creative and thoughtful solutions. Beyond programming, this collaborative spirit definitely aided our development process in diversifying perspectives, even if our data collection remained limited. It helped us recognize areas one missed, and gather a more diverse viewpoint on this project. Furthermore, not only should this collaboration should be similarly applied to the homogeneous development teams Pao critiques, but should also be applied in the used datasets themselves in the sense of diversity. Viewing each data as a representation, voice, and identity of another individual, having a diverse, unique, and extensive dataset truly helps build the accuracy and equity of the model.</p>
+        <p>One aspect that the project also had us truly think about was the performative nature of algorithmic classification. Just as Booten analyzes the hashtag #AllLivesMatter as a rhetorical act designed to undermine #BlackLivesMatter, our model’s binary labeling scheme reduced the nuance of human emotion to a fixed set of expressions. In Buolamwini’s book, she repeatedly emphasizes the power dynamics embedded in facial recognition systems. One powerful quote stands out: "The default settings of many technologies reflect the default settings of power in society". While this applies to how AI models often reflect and are more accurate for the majority and those in power, it also applied to how our model’s assumptions—what constitutes a smile, what qualifies as serious—were a reflection of our biases, not objective truths. We had to ask ourselves: what counts as a smile? Who decides? Is a neutral face the same for everyone? Could AI ever truly capture the complexities of human expression? We believed this was also relevant to the recent debates of AI in creating art; if technology could ever surpass human talent or mimic human emotion to a believable extent.</p>
+      </div>
     </div>
 
-    <footer>
-        <p>&copy; 2025 LIS500 P2 Justina Rhee, Isha Puri</p>
-    </footer>
+    <!-- Card 2: Personal Reflection Section -->
+    <div class="card">
+      <h2 role="button" tabindex="0">Reflection</h2>
+      <div class="card-content">
+        <p>We truly learned a lot during the process of building this model. Watching our model misclassify subtle expressions reminded me of Buolamwini’s experience wearing a white mask just to be detected. That visual has stayed with us. It exemplifies the absurdity of exclusionary design and the lengths marginalized individuals must go just to be seen.</p>
+        <p>The most surprising lesson for us was realizing how quickly even a low-stakes model, like ours, could reinforce harm. While our model won’t be used in law enforcement or hiring, the very act of building it forced us to confront the biases embedded in design, data collection, and interpretation.</p>
+        <p>Moving forward, we feel more committed to transparency, participatory design, and building systems that surface uncertainty rather than hide it. This project made clear that AI is never neutral—and neither are its creators, but it’s essential we continually strive for that goal.</p>
+      </div>
+    </div>
+
+    <!-- Card 3: Conclusion Section -->
+    <div class="card">
+      <h2 role="button" tabindex="0">Conclusion</h2>
+      <div class="card-content">
+        <p>Our Teachable Machine project began as a simple experiment and became a case study in the politics of AI design. We saw firsthand the limitations of small, homogenous datasets and the dangers of assuming objectivity in technical tools. We also witnessed how these technical flaws often mask deeper ethical problems.</p>
+        <p>Inspired by Buolamwini’s call for transparency and accountability, we now see our role as technologists not just as builders, but as stewards of ethical decision-making. In future projects, we hope to better document datasets, involve more users in training, and design UIs that communicate model uncertainty. Ultimately, this project taught us that good AI is not just about code or accuracy—it’s about justice. It’s crucial we, beyond this class and as a larger society, struggle, persevere, and work towards constantly bettering the technology in representing intersectionality and the different viewpoints/voices, especially those marginalized.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Page Footer -->
+  <footer>
+    <p>&copy; 2025 LIS500 P2 Justina Rhee, Isha Puri</p> <!-- Copyright -->
+  </footer>
 </body>
 </html>
