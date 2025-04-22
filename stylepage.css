@@ -61,9 +61,11 @@ nav ul li a.active {
 
 /* Title Below Navigation */
 header h1 {
-    font-size: 30px;
-    margin-top: 15px;
+    font-size: 40px;
+    font-weight: 800;
+    margin-top: 25px;
 }
+
 /* Hero Section */
 .hero {
     padding: 50px;
@@ -475,3 +477,80 @@ header.teachable-header {
     object-fit: cover;  /* Ensures the image fills the space without distortion */
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
+/* Parent list items (main nav items) are positioned relative to anchor dropdown menus properly */
+nav ul li {
+    position: relative;
+}
+
+/* Style for dropdown menu (sublist under a nav item), initially hidden */
+nav ul li ul {
+    display: none; /* Hidden by default */
+    position: absolute; /* Positioned relative to the parent <li> */
+    top: 100%; /* Dropdown appears directly below parent */
+    left: 0;
+    background: rgba(255, 255, 255, 0.95); /* Light white background with opacity */
+    padding: 10px 0;
+    list-style: none; /* Remove bullet points */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for dropdown effect */
+    z-index: 9999; /* Ensures dropdown stays on top */
+    border-radius: 5px; /* Rounded corners */
+    min-width: 180px; /* Minimum width for the dropdown */
+}
+
+/* When hovering over the parent nav item, display the dropdown menu */
+nav ul li:hover ul {
+    display: block;
+}
+
+/* Style each dropdown <li> to fill full width and align left */
+nav ul li ul li {
+    width: 100%;
+    text-align: left;
+}
+
+/* Style the dropdown links */
+nav ul li ul li a {
+    color: #ff758c; /* Pink text color */
+    background: transparent;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 12px;
+    display: block; /* Fill the entire <li> width */
+    transition: background 0.3s ease; /* Smooth hover transition */
+}
+
+/* On hover, change background and text color for dropdown links */
+nav ul li ul li a:hover {
+    background: rgba(255, 117, 140, 0.1); /* Light pink background */
+    color: #e64e69; /* Darker pink text */
+    border-radius: 4px;
+}
+
+/* Hide expandable card content initially */
+.card .card-content {
+    display: none;
+    max-height: 0; /* Collapse height */
+    overflow: hidden; /* Hide overflowed content */
+    transition: max-height 0.3s ease, padding 0.3s ease; /* Smooth expand/collapse */
+}
+
+/* When the card is open (e.g., after click), reveal content */
+.card.open .card-content {
+    display: block;
+    max-height: 3000px; /* Large enough to accommodate expanded content */
+    padding-top: 20px;
+}
+
+/* Style open cards with a light background color */
+.card.open {
+    background: #ffccd5 !important; /* Light pink background override */
+}
+
+/* Instruction text style for user interaction guidance */
+.click-instruction {
+    text-align: center;
+    font-style: italic;
+    margin: 10px auto 30px auto;
+    font-size: 15px;
+    color: #888; /* Soft gray text */
+} 
